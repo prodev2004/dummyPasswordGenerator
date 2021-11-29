@@ -1,0 +1,104 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: #0e0e0e;
+    background-image: url(https://unsplash.it/1600/900);
+    /* this url will generate a random image from the unsplash everytime the page is refereshed */
+    background-size: cover;
+}
+
+.container {
+    width: clamp(400px, 90vw, 500px);
+    position: relative;
+    text-align: center;
+}
+.content {
+    background-color: rgba(255, 255, 255, .6);
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, .2);
+    padding: 2rem;
+    border-radius: .5rem;
+}
+.input_container {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0 2rem 0;
+}
+.input_container input {
+    flex: 1;
+    height: 50px;
+    background-color: #0e0e0e;
+    border: none;
+    color: #fff;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    outline: none;
+    cursor: text;
+    letter-spacing: .5rem;
+}
+.input_container button {
+    width: 50px;
+    aspect-ratio: 1/1;
+    margin-left: 1rem;
+    background-color: #0e0e0e;
+}
+.input_container button:hover {
+    border-radius: 50%;
+}
+
+button {
+    width: 100%;
+    font-size: 1.2rem;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: 200ms ease-in-out border-radius;
+}
+button:active {
+    transform: scale(.95);
+}
+
+.gen_btn {
+    padding: .5rem;
+    color: #0e0e0e;
+    border-color: #0e0e0e;
+    border-width: 2px;
+    font-weight: 500;
+    transition: 200ms ease-in-out color,
+                200ms ease-in-out background-color;
+}
+.gen_btn:hover {
+    color: #fff;
+    background-color: #0e0e0e;
+}
+
+.alert {
+    position: absolute;
+    width: 100%;
+    background-color: #ff0000;
+    color: #fff;
+    font-size: 1.3rem;
+    border-radius: .5rem;
+    padding: 1rem;
+
+    /* we want the alert to be hidden as default */
+    transform: translateY(100%);
+    opacity: 0;
+    transition: 200ms ease-in-out transform,
+                200ms ease-in-out opacity;
+}
+
+/* then we'll show the alert with JS by adding this (show_alert) class to the alert */
+.show_alert {
+    transform: translateY(30%);
+    opacity: 1;
+}
+/* now it's Js time */
